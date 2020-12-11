@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# How to run this project
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -8,63 +8,65 @@ In the project directory, you can run:
 
 ### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# MVP User Stories
+  
+1.	Users can add GitHub repos they want to keep track of.   App keeps track of added repos (e.g. using LocalStorage/IndexedDB) until application data is cleared.   No need for a formal user or authentication concept at this point.  
+  
+https://github.com/kjlevitz/repository-tracker/issues/1  
 
-### `yarn test`
+2.	Users can see the last release date associated with each repo.  
+  
+https://github.com/kjlevitz/repository-tracker/issues/2  
+  
+3.	Users can mark a release as seen (for example, this can be done in the sample UI below by opening the details view associated with each repo)  
+  
+https://github.com/kjlevitz/repository-tracker/issues/3  
+  
+4.	There is a visual indicator for repositories with new releases since they were last marked as seen.  
+  
+https://github.com/kjlevitz/repository-tracker/issues/4  
+  
+5.	There is a way to reload release data for all repos (e.g. by refreshing the app)  
+  
+https://github.com/kjlevitz/repository-tracker/issues/5  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Optional improvements and User Stories
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1.	Release notes / other data that we might want to present in a details view.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Potentially in a future release.
 
-### `yarn eject`
+2.	Should this app work on mobile web?
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+It will work on mobile web, however, there will be extra scrolling required. 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3.	When to load/update data and what loading states should be there.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Data states are loaded from browser storage and updated via functions.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+4.	Filter (or sort) repo list so as to easily see repos with new releases since we've last seen them
 
-## Learn More
+https://github.com/kjlevitz/repository-tracker/issues/6
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+5.	Other ways to categorize / search / filter repositories
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+https://github.com/kjlevitz/repository-tracker/issues/7
 
-### Code Splitting
+6.	Additional personal metadata associated with each repo.   E.g. the ability to mark a release as something to revisit / to updates in other projects.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Potentially in a future release.
 
-### Analyzing the Bundle Size
+7.	Some projects don't use GitHub releases.   Maybe we can use commit activity as a second data point?
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Potentially in a future release.
 
-### Making a Progressive Web App
+8.	Desktop / mobile notifications
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Potentially in a future release.
 
-### Advanced Configuration
+9.	How would you build a real server for this / turn this into a service that would store data beyond the local browser?
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If this were going to be ran on a web server, I would use another storage solution to keep track of stored repositories. MongoDB comes to mind as a viable option.
